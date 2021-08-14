@@ -107,6 +107,7 @@ module JSONAPI
           jsonapi_request.operations.each do |op|
             op.options[:serializer] = resource_serializer_klass.new(
               op.resource_klass,
+              context: context,
               include_directives: op.options[:include_directives],
               fields: op.options[:fields],
               base_url: base_url,
